@@ -1,0 +1,33 @@
+
+Notes on Implementation of Customer Paradigm applicant project.
+----------------------------------------------------------------------------
+
+
+Assumptions:
+
+Every object that inherits from AbstractModel will use the same database server, database, and
+login credentials.
+
+Namespaces are not used in order to keep things simple and not have to significantly
+rework the project directory structure.
+
+The procedural interface of mysqli is used, rather than the OO interface, in the interest of
+minimizing dependence on a particular database server. PDO would be a further step in that
+direction.
+
+
+Explanations:
+
+The properties _pk and _table were moved down into the superclass, AbstractModel because
+they are needed to construct the required SQL statements.
+
+
+Questions:
+
+What version of PHP should I assume?
+
+Why don't existing source files have /> closing tag (for the opening <?PHP) ?
+
+Is the convention at Customer Paradigm to use false or NULL for no value?
+
+
